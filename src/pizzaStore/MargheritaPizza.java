@@ -1,6 +1,7 @@
 package pizzaStore;
 
 public class MargheritaPizza extends AbstractPizza {
+	
     public MargheritaPizza() {
         super();
         this.priceWithoutToppings = 2.50;
@@ -18,7 +19,7 @@ public class MargheritaPizza extends AbstractPizza {
     protected double addToppingsToPrice(double priceWithoutToppings) {
         double totalPrice = priceWithoutToppings;
         for (Toppings topping : toppingList) {
-            totalPrice += getTotalPrice();
+            totalPrice += topping.getToppingPrice();
         }
         return totalPrice;
     }
