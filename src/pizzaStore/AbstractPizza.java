@@ -9,19 +9,20 @@ public abstract class AbstractPizza {
 	protected double priceWithoutToppings;
 	protected double totalPrice;
 	protected int abstractPizzaOrderID;
-	protected static int orderIDCounter;
+	protected static int orderIDCounter = 0;
 	protected ICookingStrategy cookingStrategy;
 	protected double cookingPrice;
 	
 	public AbstractPizza() {
         this.toppingList = new ArrayList<>();
+        this.abstractPizzaOrderID = ++orderIDCounter;
     }
 	
 	public AbstractPizza(AbstractPizza abstractPizza) {
         this.toppingList = new ArrayList<>(abstractPizza.toppingList);
         this.priceWithoutToppings = abstractPizza.priceWithoutToppings;
         this.totalPrice = abstractPizza.totalPrice;
-        this.abstractPizzaOrderID = abstractPizza.abstractPizzaOrderID;
+        this.abstractPizzaOrderID = ++orderIDCounter;
         this.cookingStrategy = abstractPizza.cookingStrategy;
         this.cookingPrice = abstractPizza.cookingPrice;
     }

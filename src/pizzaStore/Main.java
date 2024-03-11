@@ -1,5 +1,6 @@
 package pizzaStore;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -10,13 +11,26 @@ public class Main {
 		// Instantiate a pizzaOrder, perform operations based on the requirements.
 		PizzaCookingFactory fakespeareFactory = new PizzaCookingFactory();
 		
-		List<abstractPizza> pizzaOrderList = new ArrayList<>();
+		List<AbstractPizza> pizzaOrderList = new ArrayList<>();
 		
 		PizzaOrder pizzaOrder = new PizzaOrder(fakespeareFactory, pizzaOrderList);
 		
 		pizzaOrder.addPizzaToCart(PizzaType.HAWAIIAN);
 	
 		pizzaOrder.addPizzaToCart(PizzaType.SUPREME);
+		
+		try {
+			double total = pizzaOrder.checkout();
+			System.out.println("The total of this order is: " + total);
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+			
+		}
+		
+		
+		
+	
 		
 		
 		

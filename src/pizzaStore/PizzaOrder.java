@@ -7,10 +7,9 @@ public class PizzaOrder {
 	private ICookingStrategy cookingStrategy;
 	private List<AbstractPizza> pizzaOrderList;
 	
-	public boolean PizzaOrder(PizzaCookingFactory pizzaFactory, List<AbstractPizza> pizzaOrderList) {
+	public PizzaOrder(PizzaCookingFactory pizzaFactory, List<AbstractPizza> pizzaOrderList) {
 		this.pizzaFactory = pizzaFactory;
 		this.pizzaOrderList = pizzaOrderList;
-		return true;
 	}
 	
 	//This method gets the pizza order with the given pizza order ID and prints the toppings of that order.
