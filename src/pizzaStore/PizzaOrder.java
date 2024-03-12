@@ -6,10 +6,12 @@ public class PizzaOrder {
 	private PizzaCookingFactory pizzaFactory;
 	private ICookingStrategy cookingStrategy;
 	private List<AbstractPizza> pizzaOrderList;
+
 	
 	public PizzaOrder(PizzaCookingFactory pizzaFactory, List<AbstractPizza> pizzaOrderList) {
 		this.pizzaFactory = pizzaFactory;
 		this.pizzaOrderList = pizzaOrderList;
+
 	}
 	
 	//This method gets the pizza order with the given pizza order ID and prints the toppings of that order.
@@ -118,14 +120,15 @@ public class PizzaOrder {
 	//isThereAnyUncookedPizza method to check for uncooked pizzas and throws an exception.
 	public double checkout() throws Exception{
 		if(isThereAnyUncookedPizza()) {
+			throw new Exception("There are uncooked pizza(s)");
+		}
+		else {
+
 			double total = 0.0;
 			for(AbstractPizza pizza: pizzaOrderList) {
 				total += pizza.getTotalPrice();
 			}
 			return total;
-		}
-		else {
-			throw new Exception("There are uncooked pizza(s)");
 		}
 	}
 	
