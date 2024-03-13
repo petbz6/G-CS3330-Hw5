@@ -4,14 +4,10 @@ public class HawaiianPizza extends AbstractPizza{
 
 	public HawaiianPizza() {
         super();
-        this.priceWithoutToppings = 3.50;
-        this.toppingList.add(Toppings.TOMATO);
+        this.priceWithoutToppings = 3.00;
+        this.toppingList.add(Toppings.CANADIAN_BACON);
         this.toppingList.add(Toppings.CHEESE);
-        this.toppingList.add(Toppings.BELL_PEPPER);
-        this.toppingList.add(Toppings.ITALIAN_SAUSAGE);
-        this.toppingList.add(Toppings.PEPPERONI);
-        this.toppingList.add(Toppings.BLACK_OLIVE);
-        this.toppingList.add(Toppings.MUSHROOM);
+        this.toppingList.add(Toppings.PINEAPPLE);
         this.totalPrice = addToppingsToPrice(this.priceWithoutToppings);
     }
 	
